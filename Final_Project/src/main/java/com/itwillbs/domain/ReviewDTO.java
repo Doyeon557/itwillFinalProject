@@ -6,7 +6,7 @@ public class ReviewDTO {
 	private String reviewee;
 	private String reviewer;
 	private int productNum;
-	private int revScore;
+	private double revScore;
 
 	private int revTotal;
 	private String revContent;
@@ -51,13 +51,13 @@ public class ReviewDTO {
 	public void setReviewer(String reviewer) {
 		this.reviewer = reviewer;
 	}
-	public int getRevScore() {
+
+	public double getRevScore() {
 		return revScore;
 	}
-	public void setRevScore(int revScore) {
+	public void setRevScore(double revScore) {
 		this.revScore = revScore;
 	}
-
 	public String getRevContent() {
 		return revContent;
 	}

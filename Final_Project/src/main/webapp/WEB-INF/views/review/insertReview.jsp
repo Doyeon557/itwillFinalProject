@@ -167,7 +167,7 @@ $(document).ready(function() {
 		        url: '${pageContext.request.contextPath }/review/insertReview', // 서버 URL
 		        data: formData, // 전송할 데이터
 		        success: function(response) {
-		        	alert('후기가 상대방의 매너점수에 반영됩니다');
+// 		        	alert('후기가 상대방의 매너점수에 반영됩니다');
 		          // 성공시 처리할 코드
 		          window.close();
 		        },

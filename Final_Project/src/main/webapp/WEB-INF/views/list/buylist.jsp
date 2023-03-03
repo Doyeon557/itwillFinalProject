@@ -72,7 +72,12 @@ font-size: 50px;
     <c:forEach var="dto" items="${buyList}">
     <%System.out.println("jsp 동작! 222222");  %>
  	<td>${dto.buyDate}</td>
-	<td>${dto.prodPic}</td>
+	<td>
+	<c:forTokens items="${dto.prodPic}" delims="|" var="p" end="0">
+	<img src="${pageContext.request.contextPath }/resources/upload/${p}" width="100" height="100">
+	</c:forTokens>
+	
+	</td>
 	<td><a href="${pageContext.request.contextPath }/selllist/prodName?num=${dto.buyNum}">
     ${dto.prodName}</a></td>
 	<td>${dto.prodPrice} 원</td>

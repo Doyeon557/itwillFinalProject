@@ -51,13 +51,13 @@ public class ReviewController {
 		System.out.println("리뷰 카테고리: "+reviewDTO.getRevCate());
 		
 		if(reviewDTO.getRevCate().equals("bad") ) {
-			reviewDTO.setRevScore(-(reviewDTO.getRevContent().split(",").length));
+			reviewDTO.setRevScore((-(reviewDTO.getRevContent().split(",").length))*0.1);
 			System.out.println("bad 스코어: " + reviewDTO.getRevScore());
 		}else if (reviewDTO.getRevCate().equals("soso")) {
 			reviewDTO.setRevScore(0);
 			System.out.println("soso 스코어: " + reviewDTO.getRevScore());
 		}else {
-			reviewDTO.setRevScore(reviewDTO.getRevContent().split(",").length);
+			reviewDTO.setRevScore((reviewDTO.getRevContent().split(",").length)*0.1);
 			System.out.println("good 스코어: " + reviewDTO.getRevScore());
 		}
 		

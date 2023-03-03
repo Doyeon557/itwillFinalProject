@@ -69,16 +69,23 @@ font-size: 50px;
                <th>상품명</th>
                <th>금액</th>
                <th>상태</th>
-               <th></th>
            </tr>
          <c:forEach var="dto" items="${sellList}">
                  <tr class="KOTRA-fontsize-90">
                     <td>${dto.productDate}</td> 
-                    <td>${dto.productPic}</td>
+                    <td>
+                    <c:forTokens items="${dto.productPic}" delims="|" var="p" end="0">
+						<img src="${pageContext.request.contextPath }/resources/upload/${p}" width="100" height="100">
+                    </c:forTokens>
+                    </td>
                     <td>${dto.productTitle}</td>
-                    <td>${dto.productPrice}</td>
-                     <td>${dto.productStatus}</td>
-                     <td><input type="button" value="거래후기 보기" class="showreview"onclick="openPop()"></td>
+                    <td>${dto.productPrice} 원</td>
+                    <c:if test="${dto.productStatus eq '판매중'}">
+                    <td style="color: red;">${dto.productStatus}</td>
+                    </c:if>
+                    <c:if test="${dto.productStatus eq '판매완료'}">
+                     <td style="color: gray;">${dto.productStatus}</td>
+                     </c:if>
                  </tr>
            </c:forEach>
         </tbody>

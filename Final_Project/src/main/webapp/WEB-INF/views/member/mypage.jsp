@@ -165,7 +165,12 @@
 											<div class="myname">
 												<div class="name_text">${dto.memNname }</div>
 												<div class="myaddress">${dto.memId }</div>
-												<div class="myreviewscore">나의 거래점수: 	${reviewDTO.revTotal}</div>
+												<div class="myreviewscore">
+												<c:if test="${reviewDTO.revTotal != null}">
+												나의 거래점수: 	${reviewDTO.revTotal} 	점</c:if>
+												<c:if test="${reviewDTO.revTotal == null}">
+												나의 거래점수: 0	점</c:if>
+												</div>
 												<!--                             <button type="button" class="btn_edit" onclick="changeName()"> -->
 												<!--                                 <span class="text">수정</span> -->
 												<!--                             </button> -->
